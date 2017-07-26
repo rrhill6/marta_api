@@ -10,5 +10,9 @@
 
   <body>
     <%= yield %>
+
+<!-- adds the google map to the page -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= Figaro.env.google_api_key %>">
+    </script>
   </body>
 </html>
