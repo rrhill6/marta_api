@@ -8,7 +8,6 @@ end
 
 
 gem 'rails', '~> 5.1.2'
-gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -29,6 +28,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'sqlite3' # took this gem from above and put here for heroku
 end
 
 group :development do
@@ -40,3 +40,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# added this to push to heroku
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
